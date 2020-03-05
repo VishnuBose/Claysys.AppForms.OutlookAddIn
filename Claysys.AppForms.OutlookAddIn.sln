@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Claysys.AppForms.OutlookAddIn", "Claysys.AppForms.OutlookAddIn\Claysys.AppForms.OutlookAddIn.csproj", "{3D37557D-F998-4847-902B-0382E163C882}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Claysys.MailWebService", "..\Claysys.MailWebService\Claysys.MailWebService\Claysys.MailWebService.csproj", "{5E09D428-0DD4-4C91-AEC9-A01DFF5C685D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D37557D-F998-4847-902B-0382E163C882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D37557D-F998-4847-902B-0382E163C882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D37557D-F998-4847-902B-0382E163C882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D37557D-F998-4847-902B-0382E163C882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E09D428-0DD4-4C91-AEC9-A01DFF5C685D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E09D428-0DD4-4C91-AEC9-A01DFF5C685D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E09D428-0DD4-4C91-AEC9-A01DFF5C685D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E09D428-0DD4-4C91-AEC9-A01DFF5C685D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E2794CD-2DF7-4CCA-B707-91FFE822F451}
+	EndGlobalSection
+EndGlobal
