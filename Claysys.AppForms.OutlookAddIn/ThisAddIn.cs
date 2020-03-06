@@ -43,17 +43,26 @@ namespace Claysys.AppForms.OutlookAddIn
                 {
                     string filterSenderMailID = mailServiceObj.GetTargetMailId();
 
-                    string recievedMailID = mail.ReceivedByName.Split(' ').Last();
-                    recievedMailID = recievedMailID.Substring(1, recievedMailID.Length - 2);
-
-                    if (recievedMailID.ToLower() == filterSenderMailID.ToLower())
+                    const string PR_SMTP_ADDRESS = "http://schemas.microsoft.com/mapi/proptag/0x39FE001E";
+                    Outlook.Recipients recips = mail.Recipients;
+                    foreach (Outlook.Recipient recip in recips)
                     {
-                        mailServiceObj.InsertMailBody(mail.SenderEmailAddress, mail.ReceivedByName, mail.Subject, mail.Body);
+                        Outlook.PropertyAccessor pa = recip.PropertyAccessor;
+                        string smtpAddress =
+                            pa.GetProperty(PR_SMTP_ADDRESS).ToString();
+                        if (smtpAddress.ToLower() == filterSenderMailID.ToLower())
+                        {
+                            mailServiceObj.InsertMailBody(mail.SenderEmailAddress, mail.ReceivedByName, mail.Subject, mail.Body);
+                            break;
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
+                System.Diagnostics.EventLog appLog = new System.Diagnostics.EventLog();
+                appLog.Source = "Claysys UCU Outlook plugging";
+                appLog.WriteEntry("Exception : " + ex);
                 throw ex;
             }
         }
